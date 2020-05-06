@@ -1,0 +1,48 @@
+\hypertarget{namespacefindprogvar}{
+\section{findprogvar Namespace Reference}
+\label{dd/d50/namespacefindprogvar}\index{findprogvar@{findprogvar}}
+}
+
+
+Package containing findC, a function which selects the best progress variable based on the given data files.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacefindprogvar_a124b8c329615516d97e63bee78f994c9}{findC}
+\begin{DoxyCompactList}\small\item\em Determines the best progress variable for the given data files. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Package containing findC, a function which selects the best progress variable based on the given data files. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacefindprogvar_a124b8c329615516d97e63bee78f994c9}{
+\index{findprogvar@{findprogvar}!findC@{findC}}
+\index{findC@{findC}!findprogvar@{findprogvar}}
+\subsubsection[{findC}]{\setlength{\rightskip}{0pt plus 5cm}def findprogvar::findC ( {\em datafiles}, \/   {\em testspecies}, \/   {\em bestC}, \/   {\em options})}}
+\label{dd/d50/namespacefindprogvar_a124b8c329615516d97e63bee78f994c9}
+
+
+Determines the best progress variable for the given data files. 
+
+This function returns a matrix containing the following: (row1) stoich prog var (row2) file indices (row3) stoich Temps, sorted by row1
+
+This function also produces plots of the progress variables: output/CvsTemp.pdf. Note that a directory \char`\"{}output\char`\"{} must exist in the directory from which this function is called.
+
+The user can skip optimization by specifying options\mbox{[}\char`\"{}SkipProgVar\char`\"{}\mbox{]} = 'yes'
+
+Note: this Python script relies on C++ functions connected through SWIG, which must generate the following modules:
+\begin{DoxyItemize}
+\item matrix
+\item sorting
+\item interpolator
+\item monocheck
+\item maxslope
+\item least nonmono
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em datafiles}]vector of strings specifying file names or paths for the desired data files. Note that the data files should be .kg files produced by FlameMaster\item[{\em testspecies}]vector of strings specifying the species to be considered in the progress variable\item[{\em bestC}]vector containing information about the best progress variable (output)\item[{\em options}]Python dictionary filled with user specified options for the program. Requires options\mbox{[}\char`\"{}sort method\char`\"{}\mbox{]}, options\mbox{[}\char`\"{}StoichMassFrac\char`\"{}\mbox{]}, options\mbox{[}\char`\"{}InterpMethod\char`\"{}\mbox{]}, options\mbox{[}\char`\"{}MaxSlopeTest\char`\"{}\mbox{]}, options\mbox{[}\char`\"{}PlotAllC\char`\"{}\mbox{]}, options\mbox{[}\char`\"{}lnmcheck\char`\"{}\mbox{]}, and options\mbox{[}\char`\"{}SkipProgVar\char`\"{}\mbox{]} to be specified \end{DoxyParams}

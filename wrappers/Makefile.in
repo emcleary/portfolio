@@ -1,0 +1,42 @@
+# Directories
+HOMEDIR	= $(shell pwd)
+ALGDIR	= $(HOMEDIR)/alglib
+SRCDIR	= $(HOMEDIR)/src
+OBJDIR	= $(HOMEDIR)/obj
+MODDIR	= $(HOMEDIR)/mod
+PYDIR	= $(HOMEDIR)/python
+
+# Files
+MATRIX	= matrix matrix3d matrix4d
+PDFS	= deltaPDF betaPDF
+INTGR	= trapz simpson glquad
+INTRP	= lininterp cubicinterp hermiteinterp
+SORT	= bubblesort standardsort brutesort
+SLOPE	= endpointslope linregression
+NONMONO	= simplelnm advancedlnm
+OTHER	= convolute fittogrid
+
+# Classes
+ABSCLS	= pdf integrator maxslope leastnonmono sorting interpolator
+DRVCLS	= $(PDFS) $(INTGR) $(INTRP) $(SORT) $(SLOPE) $(NONMONO)
+CLASS	= $(MATRIX) monocheck
+
+# All *.cc
+SRC	= $(DRVCLS) $(CLASS) $(OTHER)
+
+# Shared Object Targets
+SO	= $(ABSCLS) $(CLASS) $(OTHER)
+
+# External library AlgLib
+ALGLIB	= alglibinternal alglibmisc ap dataanalysis \
+	diffequations fasttransforms integration \
+	interpolation linalg optimization solvers \
+	specialfunctions statistics
+
+# Include headers from external libraries
+LIBDIR	= $(shell dirname `pwd`)
+EXTLIB	= -I$(LIBDIR)/alglib
+
+CXX		= icpc
+CXXFLAGS	= -O3 -fPIC -Wall -fopenmp #-DNDEBUG
+PYLIB		= -I/usr/include/python2.7

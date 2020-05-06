@@ -1,0 +1,61 @@
+\hypertarget{namespacecombinations}{
+\section{combinations Namespace Reference}
+\label{d7/d2b/namespacecombinations}\index{combinations@{combinations}}
+}
+
+
+Module containing functions necessary for creating matrices for calculating all possible combinations of elements of a vector/matrix.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacecombinations_a291e325d47c2536bd076643ed9e43a18}{numcoms}
+\item 
+def \hyperlink{namespacecombinations_abefb44c848756b98f722e3fa81efda7d}{totnumcoms}
+\item 
+def \hyperlink{namespacecombinations_ad6b224efacd64f54ea9aed50553a90e7}{combos}
+\item 
+def \hyperlink{namespacecombinations_a588fb56fb35f2df61790cf15ef69375c}{combination\_\-mat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module containing functions necessary for creating matrices for calculating all possible combinations of elements of a vector/matrix. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacecombinations_a588fb56fb35f2df61790cf15ef69375c}{
+\index{combinations@{combinations}!combination\_\-mat@{combination\_\-mat}}
+\index{combination\_\-mat@{combination\_\-mat}!combinations@{combinations}}
+\subsubsection[{combination\_\-mat}]{\setlength{\rightskip}{0pt plus 5cm}def combinations::combination\_\-mat ( {\em matrix})}}
+\label{d7/d2b/namespacecombinations_a588fb56fb35f2df61790cf15ef69375c}
+\begin{DoxyVerb}returns a combinations matrix A such that for a row vector x:
+
+x*A gives a row vector y which contains all possible combinations of 
+the elements of x. For example, for x = [x1 x2 x3], then x*A gives:
+[x1 x2 x3 x1+x2 x1+x3 x2+x3 x1+x2+x3]\end{DoxyVerb}
+ \hypertarget{namespacecombinations_ad6b224efacd64f54ea9aed50553a90e7}{
+\index{combinations@{combinations}!combos@{combos}}
+\index{combos@{combos}!combinations@{combinations}}
+\subsubsection[{combos}]{\setlength{\rightskip}{0pt plus 5cm}def combinations::combos ( {\em k}, \/   {\em matrix})}}
+\label{d7/d2b/namespacecombinations_ad6b224efacd64f54ea9aed50553a90e7}
+\begin{DoxyVerb}returns a combinations matrix A such that for a row vector x:
+
+x*A gives a row vector y which contains all possible combinations of 
+k elements of x. For example, for x = [x1 x2 x3], k=2, then 
+x*A gives: [x1+x2 x1+x3 x2+x3]\end{DoxyVerb}
+ \hypertarget{namespacecombinations_a291e325d47c2536bd076643ed9e43a18}{
+\index{combinations@{combinations}!numcoms@{numcoms}}
+\index{numcoms@{numcoms}!combinations@{combinations}}
+\subsubsection[{numcoms}]{\setlength{\rightskip}{0pt plus 5cm}def combinations::numcoms ( {\em n}, \/   {\em k})}}
+\label{d7/d2b/namespacecombinations_a291e325d47c2536bd076643ed9e43a18}
+\begin{DoxyVerb}Returns the number of ways k elements can be selected from a
+set of size n\end{DoxyVerb}
+ \hypertarget{namespacecombinations_abefb44c848756b98f722e3fa81efda7d}{
+\index{combinations@{combinations}!totnumcoms@{totnumcoms}}
+\index{totnumcoms@{totnumcoms}!combinations@{combinations}}
+\subsubsection[{totnumcoms}]{\setlength{\rightskip}{0pt plus 5cm}def combinations::totnumcoms ( {\em n})}}
+\label{d7/d2b/namespacecombinations_abefb44c848756b98f722e3fa81efda7d}
+\begin{DoxyVerb}Returns the number of ways elements can be selected from a set of size n
+in any group size from 1 to n. \end{DoxyVerb}
+ 

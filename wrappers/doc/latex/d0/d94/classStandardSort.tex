@@ -1,0 +1,75 @@
+\hypertarget{classStandardSort}{
+\section{StandardSort Class Reference}
+\label{d0/d94/classStandardSort}\index{StandardSort@{StandardSort}}
+}
+Inheritance diagram for StandardSort:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{d0/d94/classStandardSort}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStandardSort_afecdf65f1388c1d23339c99f799131fd}{StandardSort} (\hyperlink{classMatrix}{Matrix} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classStandardSort_a71e4c8dff2b71dcf0958babaf2e3beb8}{
+\hyperlink{classStandardSort_a71e4c8dff2b71dcf0958babaf2e3beb8}{$\sim$StandardSort} ()}
+\label{d0/d94/classStandardSort_a71e4c8dff2b71dcf0958babaf2e3beb8}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int \hyperlink{classStandardSort_ae0c7e47ba48c319989b41815b0724f41}{sort\_\-data} ()
+\begin{DoxyCompactList}\small\item\em Main function that sorts the given data. \item\end{DoxyCompactList}\item 
+\hypertarget{classStandardSort_afdf7549b717b75c6274697fddcb75c8a}{
+void \hyperlink{classStandardSort_afdf7549b717b75c6274697fddcb75c8a}{SetRefColNum} (int num)}
+\label{d0/d94/classStandardSort_afdf7549b717b75c6274697fddcb75c8a}
+
+\begin{DoxyCompactList}\small\item\em Set the reference column number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStandardSort_afecdf65f1388c1d23339c99f799131fd}{
+\index{StandardSort@{StandardSort}!StandardSort@{StandardSort}}
+\index{StandardSort@{StandardSort}!StandardSort@{StandardSort}}
+\subsubsection[{StandardSort}]{\setlength{\rightskip}{0pt plus 5cm}StandardSort::StandardSort ({\bf Matrix} $\ast$ {\em data})}}
+\label{d0/d94/classStandardSort_afecdf65f1388c1d23339c99f799131fd}
+
+
+Constructor. 
+
+The data to be sorted is passed to the constructor. A duplicate of the data is produced to be later at this stage 
+
+\subsection{Member Function Documentation}
+\hypertarget{classStandardSort_ae0c7e47ba48c319989b41815b0724f41}{
+\index{StandardSort@{StandardSort}!sort\_\-data@{sort\_\-data}}
+\index{sort\_\-data@{sort\_\-data}!StandardSort@{StandardSort}}
+\subsubsection[{sort\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int StandardSort::sort\_\-data ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d0/d94/classStandardSort_ae0c7e47ba48c319989b41815b0724f41}
+
+
+Main function that sorts the given data. 
+
+The algorithm sends the reference column to the standard sorting operator that is embedded into the C++ standard library
+
+\begin{DoxyVerb}
+  INPUT 
+
+  There are no inputs. The data to be sorted is already passed via the constructor
+
+  OUTPUT:
+
+  int       flag specifying whether or not the function succeeded
+             = 0: success
+	    != 0: something went wrong
+
+\end{DoxyVerb}
+ 
+
+Implements \hyperlink{classSorting_a6686201265fbb31ba9c2071623742be1}{Sorting}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/standardsort.h\item 
+src/standardsort.cc\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\hypertarget{classAdvancedLNM}{
+\section{AdvancedLNM Class Reference}
+\label{dd/d1d/classAdvancedLNM}\index{AdvancedLNM@{AdvancedLNM}}
+}
+Inheritance diagram for AdvancedLNM:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{dd/d1d/classAdvancedLNM}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAdvancedLNM_af9317f34be7610889b8d37c606165ec4}{AdvancedLNM} (const \hyperlink{classMatrix}{Matrix} \&progVar)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classAdvancedLNM_af44785dd7ff58621804d9911be88836a}{
+\hyperlink{classAdvancedLNM_af44785dd7ff58621804d9911be88836a}{$\sim$AdvancedLNM} ()}
+\label{dd/d1d/classAdvancedLNM_af44785dd7ff58621804d9911be88836a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int \hyperlink{classAdvancedLNM_aaf028bdf53b6428371d122eb4cf343b4}{LeastNonMonotonic} (int $\ast$monoAry, const int ncols, const int col)
+\begin{DoxyCompactList}\small\item\em Method to find least monotonic progress variable. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAdvancedLNM_af9317f34be7610889b8d37c606165ec4}{
+\index{AdvancedLNM@{AdvancedLNM}!AdvancedLNM@{AdvancedLNM}}
+\index{AdvancedLNM@{AdvancedLNM}!AdvancedLNM@{AdvancedLNM}}
+\subsubsection[{AdvancedLNM}]{\setlength{\rightskip}{0pt plus 5cm}AdvancedLNM::AdvancedLNM (const {\bf Matrix} \& {\em progVar})}}
+\label{dd/d1d/classAdvancedLNM_af9317f34be7610889b8d37c606165ec4}
+
+
+Constructor. 
+
+\hyperlink{classAdvancedLNM}{AdvancedLNM} is a class that determines the least non-\/monotonic progress variable with respect to temperature (or another specified column). It determines the progress variable with the smallest percentage of non-\/unique (one-\/to-\/one) points and selects it as the least non-\/monotonic progress variable.
+
+If two or more progress variables share the smallest percentage, then the progress variable with the greatest magnitude slope (by endpoints) is selected. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classAdvancedLNM_aaf028bdf53b6428371d122eb4cf343b4}{
+\index{AdvancedLNM@{AdvancedLNM}!LeastNonMonotonic@{LeastNonMonotonic}}
+\index{LeastNonMonotonic@{LeastNonMonotonic}!AdvancedLNM@{AdvancedLNM}}
+\subsubsection[{LeastNonMonotonic}]{\setlength{\rightskip}{0pt plus 5cm}int AdvancedLNM::LeastNonMonotonic (int $\ast$ {\em monoAry}, \/  const int {\em ncols}, \/  const int {\em col})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{dd/d1d/classAdvancedLNM_aaf028bdf53b6428371d122eb4cf343b4}
+
+
+Method to find least monotonic progress variable. 
+
+LeastNonMonotonic calculates the percentage of non-\/unique points. The input array monoAry will initially be filled with 0s since all progress variables are non-\/monotonic. This method will select the least non-\/monotonic and change its value in monoAry to 1. col is the reference column.
+
+\begin{DoxyVerb}
+INPUTS:
+
+int *monoAry     array containing integer flags that denote the monotonicity of candidate progress variables
+
+const int ncols  number of columns of monoAry
+
+const int col    the reference column 
+
+OUTPUT:
+
+int              flag specifying whether or not the function succeeded
+                  = 0: success
+		 != 0: something went wrong
+
+
+\end{DoxyVerb}
+ 
+
+Implements \hyperlink{classLeastNonMono_a239cbd7836950dc7c758138c4db00d0c}{LeastNonMono}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/advancedlnm.h\item 
+src/advancedlnm.cc\end{DoxyCompactItemize}
