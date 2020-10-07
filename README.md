@@ -5,7 +5,8 @@ studies.
 **Optimization**
 
 This is an example test script from my research project, implementing
-the Ensemble Kalman Inversion algorithm for optimizing noisy data.
+the Ensemble Kalman Inversion algorithm for optimizing model parameters
+given noisy data.
 
 **Asynchrony Tolerant Schemes**
 
