@@ -41,8 +41,6 @@ class EKI:
         u = np.copy(self.u[-1])
 
         # Ensemble statistics
-        u_bar = u.mean(1)
-        p_bar = g.mean(1)
         c_up = np.tensordot(u, g.T, 1) / self.J
         c_pp = np.tensordot(g, g.T, 1) / self.J
 
