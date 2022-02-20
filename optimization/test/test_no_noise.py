@@ -4,7 +4,7 @@ sys.path.append('../src')
 sys.path.append('../tools')
 import numpy as np
 from eki import EKI
-from models import MODEL
+from models import Model
 
 
 def test_main():
@@ -22,11 +22,11 @@ def test_main():
     u_ens = np.random.normal(loc=0, scale=2, size=(true_param.size, n_ens))
 
     # Model and EKI objects
-    m = MODEL(n_var, true_param)
+    m = Model(n_var, true_param)
     eki = EKI(u_ens, m.truth, m.cov, model=m.run_model)
 
     # EKI iteration
-    u_opt = eki.run_with_model(u_ens, 1)
+    u_opt = eki.run_with_model(1)
 
     # Converges in one iterations
     err = np.abs(true_param - eki.u[-1].mean(1))

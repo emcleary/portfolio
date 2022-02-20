@@ -3,7 +3,7 @@ sys.path.append('../src')
 sys.path.append('../tools')
 import numpy as np
 from eki import EKI
-from models import NOISYLINEAR
+from models import NoisyLinear
 
 
 if __name__=='__main__':
@@ -20,9 +20,9 @@ if __name__=='__main__':
     u_ens = np.random.uniform(0, 1, (true_param.size, n_ens))
 
     # Optimize model parameters
-    m = NOISYLINEAR(n_var, true_param)
+    m = NoisyLinear(n_var, true_param)
     eki = EKI(u_ens, m.truth, m.cov, model=m.run_model)
-    u_opt = eki.run_with_model(u_ens, n_iter)
+    u_opt = eki.run_with_model(n_iter)
 
     print('')
     print('Optimized parameters')
