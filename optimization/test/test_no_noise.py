@@ -1,53 +1,37 @@
 import pytest
 import sys
 sys.path.append('../src')
+sys.path.append('../tools')
 import numpy as np
 from eki import EKI
-
-class MODEL:
-
-    # numvar: number of variables
-    def __init__(self, numvar, parameters):
-        # True parameters
-        self.p = parameters
-        numpar = parameters.size
-
-        # Linear model
-        self.A = np.random.normal(loc=0, scale=2, size=(numvar, numpar))
-
-        # Covariance for noise
-        self.cov = np.zeros((numvar,numvar))
-
-        # True model
-        self.truth = self.f(self.p)
-
-    # Model without noise
-    def f(self, parameters):
-        return self.A.dot(parameters)
+from models import MODEL
 
 
 def test_main():
 
     np.random.seed(42)
-    
+
     # Ensemble size
-    J = 100
+    n_ens = 100
 
     # Truth
-    numvar = 5
-    parameters = np.array([0.7, 2])
-    m = MODEL(numvar, parameters)
+    n_var = 5
+    true_param = np.array([0.7, 2])
 
     # Generate ensembles
-    u_ens = np.random.normal(loc=0, scale=2, size=(parameters.size, J))
+    u_ens = np.random.normal(loc=0, scale=2, size=(true_param.size, n_ens))
 
-    # Ensemble Kalman Inversion object
-    eki = EKI(u_ens, m.truth, m.cov)
-    g_ens = m.f(u_ens)
+    # Model and EKI objects
+    m = MODEL(n_var, true_param)
+    eki = EKI(u_ens, m.truth, m.cov, model=m.run_model)
 
     # EKI iteration
-    eki.update(g_ens)
+    u_opt = eki.run_with_model(u_ens, 1)
 
     # Converges in one iterations
-    err = np.abs(parameters - eki.u[-1].mean(1))
-    assert all([ei < 1e-14 for ei in err])
+    err = np.abs(true_param - eki.u[-1].mean(1))
+    assert all([ei < 1e-3 for ei in err])
+
+
+if __name__=='__main__':
+    test_main()
