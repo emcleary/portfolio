@@ -1,13 +1,22 @@
+"""Linear Model Experiments
+
+This script can be used to experiment with EKI and a linear model from
+the command line.
+
+The tool requires that `NumPy` be installed in your Python environment.
+
+"""
+
 import sys
 sys.path.append('../src')
 import numpy as np
 from eki import EKI
-from argparse import ArgumentParser, Namespace
+from argparse import ArgumentParser, RawTextHelpFormatter, Namespace
 from models import Model
 from myTypes import *
 
 def get_cmd_line_arguments() -> Namespace:
-    parser = ArgumentParser(description="Experiment with optimizing a noisy, linear model")
+    parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
 
     parser.add_argument('n_iter', type=int, help='Number of iterations for optimizing')
     parser.add_argument('-n_ens', type=int, default=100, help='Ensemble size')
@@ -22,18 +31,19 @@ def get_cmd_line_arguments() -> Namespace:
 
 if __name__=='__main__':
 
-    args: Namespace = get_cmd_line_arguments()
-    n_iter: int = args.n_iter
-    n_ens: int = args.n_ens
-    n_var: int = args.n_var
-    n_par: int = args.n_par
-    min_param: int = args.min_param
-    max_param: int = args.max_param
-    seed: int = args.seed
+    args = get_cmd_line_arguments()
+    n_iter = args.n_iter
+    n_ens = args.n_ens
+    n_var = args.n_var
+    n_par = args.n_par
+    min_param = args.min_param
+    max_param = args.max_param
+    seed = args.seed
 
     if n_par > n_var:
-        print('The number of model parameters cannot be larger than the dimensionality of the data.\n'
-              'Otherwise there is not a unique solution to the optimized parameters.')
+        print('The number of model parameters cannot be larger than'
+              'the dimensionality of the data.\n' 'Otherwise there is'
+              'not a unique solution to the optimized parameters.')
 
     if seed is not None:
         np.random.seed(seed)

@@ -1,6 +1,10 @@
-"""Example with a linear, noisy model
+"""Example with streamed data
 
-This example runs EKI by passing the model into the class.
+This example runs EKI by streaming a new model response into the
+object on each iteration. This script demonstrates usage of the
+initialize, run, and finalize methods. This approach is intended for
+using with complex models that are computationally expensive and
+cannot be written as simple functions.
 
 This script should be run from the command line. Make sure `NumPy` is
 installed in your Python environment.
@@ -29,10 +33,17 @@ if __name__=='__main__':
     # Generate parameter ensembles
     u_ens = np.random.uniform(0, 1, (true_param.size, n_ens))
 
-    # Optimize model parameters
+    # Instantiate objects
     m = NoisyLinear(n_var, true_param)
-    eki = EKI(u_ens, m.truth, m.cov, model=m.run_model)
-    u_opt = eki.run_with_model(n_iter)
+    eki = EKI(u_ens, m.truth, m.cov)
+
+    # EKI with streaming
+    ui = eki.initialize_for_stream()
+    for _ in range(n_iter):
+        gi = m.run_model(ui)
+        ui = eki.run_with_stream(gi)
+    gi = m.run_model(ui)
+    u_opt = eki.finalize_stream(gi)
 
     print('')
     print('Optimized parameters')
