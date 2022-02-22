@@ -15,6 +15,7 @@ from argparse import ArgumentParser, RawTextHelpFormatter, Namespace
 from models import Model
 from myTypes import *
 
+
 def get_cmd_line_arguments() -> Namespace:
     parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
 
@@ -29,7 +30,7 @@ def get_cmd_line_arguments() -> Namespace:
     return parser.parse_args()
 
 
-if __name__=='__main__':
+def main():
 
     args = get_cmd_line_arguments()
     n_iter = args.n_iter
@@ -69,3 +70,7 @@ if __name__=='__main__':
     print('Error')
     print(eki.error[-1])
     print('')
+
+
+if __name__=='__main__':
+    main()

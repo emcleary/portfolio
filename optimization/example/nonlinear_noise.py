@@ -17,6 +17,7 @@ from eki import EKI
 from models import Model
 from myTypes import NDArrayFloat64
 
+
 class Nonlinear(Model):
     def initialize_model(self) -> None:
         self.A = np.random.normal(0, 2, size=(self.n_dim, self.true_param.size))
@@ -32,8 +33,7 @@ class Nonlinear(Model):
         return g + eta
     
 
-
-if __name__=='__main__':
+def main():
 
     n_iter = 20
     n_ens = 100
@@ -61,3 +61,7 @@ if __name__=='__main__':
     print('Error')
     print(eki.error[-1])
     print('')
+
+
+if __name__=='__main__':
+    main()

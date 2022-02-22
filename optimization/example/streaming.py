@@ -20,7 +20,7 @@ from eki import EKI
 from models import NoisyLinear
 
 
-if __name__=='__main__':
+def main():
 
     n_iter = 20
     n_ens = 100
@@ -55,3 +55,7 @@ if __name__=='__main__':
     print('Error')
     print(eki.error[-1])
     print('')
+
+
+if __name__=='__main__':
+    main()
