@@ -1,3 +1,11 @@
+"""Test case: linear model without noise
+
+This test checks that a simple, linear, deterministic model will be
+well-optimized by the EKI algorithm in just a single iteration.
+
+"""
+
+
 import pytest
 import sys
 sys.path.append('../src')
