@@ -51,7 +51,7 @@ iterations to converge.
 ## Results
 
 My code implements this in `solver.py`, which dumps the following image.
-![](solver.png)
+![](circle.png)
 
 
 ## Other Shapes
