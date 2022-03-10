@@ -43,26 +43,22 @@ the x-axis and approaching the circle from the right. Other schemes
 need to be added for the other three directions.
 
 My implementation generalized this scheme to include all four
-directions in a single scheme, and I organized it in a way to make use
-of vectorized operations as much as possible. This was crucial for
-making running the scheme practical, as it can take 10,000-100,000
-iterations to converge.
+directions in a single scheme, and I organized it in a way simplify
+parallelizing with OpenMP. This was crucial for making running the
+scheme practical, as it can take 10,000-100,000 iterations to
+converge.
 
 ## Results
 
-My code implements this in `solver.py`, which dumps the following image.
+My code implements the solver in `solver.cpp`. The impementation is
+designed to work with different parametric functions, so it should
+work for any simple shape that can be defined by pair of functions,
+e.g. for a circle, the functions would be (cos(s), sin(s)) for (x,y).
+
+Below or some plots of several shapes, including a circle, a square,
+and a star.
+
 ![](circle.png)
-
-
-## Other Shapes
-
-My implementation defined the circle using parametric equations
-(cos(s), sin(s)) for (x,y), with the hopes of generalizing my code to
-work shapes defined by other functions. As seen in the following
-images, I have successfully run my code on a square, teardrop, and
-star. These cases are seen in their respective files, and they are
-very easy to implement, only requiring definitions of parametric
-functions, boundary conditions, and initial conditions.
 
 ![](square.png)
 
