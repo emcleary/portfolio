@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import root
 from itertools import product
+from time import time
 
 class Solver:
     """A 2-dimensional, first order accurate finite difference
@@ -179,8 +180,8 @@ class Solver:
         self.b_in_shape = np.zeros(self.X.shape, dtype=bool)
 
         # State variables
-        self.un = None
-        self.unp1 = None
+        self.un = np.zeros(self.X.shape)
+        self.unp1 = np.zeros(self.X.shape)
 
         # Surface points
         self.surf_x = None
@@ -188,15 +189,96 @@ class Solver:
 
         # Fill/update arrays with values needed
         self._calc_surf_points()
-        self._set_bools_in_shape()
         self._set_bools_on_shape()
+        self._set_bools_in_shape()
         self._calc_dist_from_surf()
         self._calc_scheme_parameters()
+
+
+    def _set_bools_on_shape(self):
+        """Determines which gridpoints are on the surfaces of the shape,
+        filling the b_on_shape attribute.
+        """
+        def is_on_shape(a, s):
+            b1 = a - self.atol < s
+            b2 = a + self.atol > s
+            return any(b1 * b2)
+
+        for j in range(self.n):
+            y = self.y[j]
+            for i in range(self.n):
+                x = self.x[i]
+                self.b_on_shape[i,j] = is_on_shape(x, self.surf_y[y]) \
+                    or is_on_shape(y, self.surf_x[x])
+
+
+    def _set_bools_in_shape(self):
+        """Determines which gridpoints are within the shape, filling the
+        b_in_shape attribute.
+        """
+
+        queue = [(0, 0)]
+        b_out_shape = np.zeros(self.X.shape, dtype=bool)
+
+        def is_in_shape(c, d, surf):
+            if c < d:
+                b1 = c + self.atol < surf
+                b2 = d - self.atol > surf
+            else:
+                b1 = c - self.atol > surf
+                b2 = d + self.atol < surf
+            return any(b1 * b2)
+
+        while queue:
+            i,j = queue.pop(0)  ## FIFO
+
+            if self.b_in_shape[i,j]:
+                continue
+            if self.b_on_shape[i,j]:
+                continue
+            if b_out_shape[i,j]:
+                continue
+            b_out_shape[i,j] = True
+
+            x = self.x[i]
+            y = self.y[j]
+
+            if i > 0:
+                queue.append((i-1,j))
+                n = self.x[i-1]
+                surf = self.surf_y[y]
+                if surf:
+                    self.b_in_shape[i-1,j] = is_in_shape(x, n, surf)
+
+            if i < self.n-1:
+                queue.append((i+1,j))
+                n = self.x[i+1]
+                surf = self.surf_y[y]
+                if surf:
+                    self.b_in_shape[i+1,j] = is_in_shape(x, n, surf)
+
+            if j > 0:
+                queue.append((i,j-1))
+                n = self.y[j-1]
+                surf = self.surf_x[x]
+                if surf:
+                    self.b_in_shape[i,j-1] = is_in_shape(y, n, surf)
+
+            if j < self.n-1:
+                queue.append((i,j+1))
+                n = self.y[j+1]
+                surf = self.surf_x[x]
+                if surf:
+                    self.b_in_shape[i,j+1] = is_in_shape(y, n, surf)
+
+        # Update b_in_shape
+        self.b_in_shape = ~b_out_shape * ~self.b_on_shape
+
 
     def _calc_surf_points(self):
         """ Calculates points on the surface of the shape along each gridline.
         """
-        
+
         # Setup a bunch of points by following the trajectory;
         # each x- or y-line must have a pair of points surrounding it
         sn = self.si
@@ -281,46 +363,6 @@ class Solver:
                     break
             assert x is not None
 
-    def _set_bools_in_shape(self):
-        """Determines which gridpoints are within the shape, filling the
-        b_in_shape attribute.
-        """
-        
-        # Find b_in_shape using these intersection points
-        # Make sure to OMIT any points that are on the surface
-        for j, y in enumerate(self.y):
-            for i, x in enumerate(self.x):
-                out_x = True
-                out_y = True
-                if self.surf_x[x]:
-                    out_x = (y < min(self.surf_x[x]) + self.atol) or (y > max(self.surf_x[x]) - self.atol)
-                if self.surf_y[y]:
-                    out_y = (x < min(self.surf_y[y]) + self.atol) or (x > max(self.surf_y[y]) - self.atol)
-                self.b_in_shape[i,j] = not (out_y or out_x) # found neither to be outside on the x direction nor the y direction --> must be inside
-
-    def _set_bools_on_shape(self):
-        """Determines which gridpoints are on the surfaces of the shape,
-        filling the b_on_shape attribute.
-        """
-
-        # Loop over surface points and check if they are on the grid
-        for i, (xi, y) in enumerate(self.surf_x.items()):
-            for yi in y:
-                b = (yi - self.atol < self.y) * (yi + self.atol > self.y)
-                if any(b):
-                    assert sum(b) == 1
-                    j = np.where(b)[0][0]
-                    if not self.b_in_shape[i,j]:
-                        self.b_on_shape[i,j] = True
-        
-        for j, (yj, x) in enumerate(self.surf_y.items()):
-            for xj in x:
-                b = (xj - self.atol < self.x) * (xj + self.atol > self.x)
-                if any(b):
-                    assert sum(b) == 1
-                    i = np.where(b)[0][0]
-                    if not self.b_in_shape[i,j]:
-                        self.b_on_shape[i,j] = True
 
     def _calc_dist_from_surf(self):
         """Calculated distances from the shape surface to neighboring
