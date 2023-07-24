@@ -1,3 +1,5 @@
 **/*.o
 **/*.pyc
 *~
+**/*.txt
+!**/CMakeLists.txt

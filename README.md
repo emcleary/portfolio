@@ -35,7 +35,7 @@ docstrings and type hinting for documentation purposes.
 
 Demonstrated skills:
 - class inheritance
-- NumPy broadcasting for efficient calculations
+- NumPy vectorization for efficient calculations
 - pytest for unit testing
 - docstrings and type-hinting for documentation
 - optimization algorithms (derivative-free/ensemble based)
@@ -50,8 +50,11 @@ reacting flows. The functions call other in-house codes/libraries
 (excluded) for the numerical schemes, calculations of transport
 properties, and calculations of reactions rates.
 
+This work served as part of a preliminary study for [this journal
+article](https://www.sciencedirect.com/science/article/abs/pii/S0021999123000013).
+
 Demonstrated skills:
-- Fortran (f77, f90)
+- Fortran (f77)
 - finite difference schemes
 - partial differential equations
 - fluid mechanics and combustion problems
