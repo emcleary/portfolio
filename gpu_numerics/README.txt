@@ -139,7 +139,7 @@ convergence. Since these solvers are expected to be second order
 accurate, we expect that doubling the number of intervals should
 decrease the error by a factor of 4.
 
-This is most observable in either the jacobi or v-cycle solver, eg,
+This is most observable in either the jacobi or v-cycle solver, e.g.
 
 $ ./multigrid 20 v 512
 
@@ -223,7 +223,7 @@ L	n	iter	error		time		time/iter
 10	1024	1589001	4.24e-02	5.441430	3.42e-06
 11	2048	3958001	1.74e-01	27.510529	6.95e-06
 12	4096	6583001	6.49e-01	93.196320	1.42e-05
-13	8192	2304001	1.71e+00	64.968712	2.82e-05 <- CPU BECOMSE SLOWER!!!!
+13	8192	2304001	1.71e+00	64.968712	2.82e-05 <- CPU BECOMES SLOWER!!!!
 
 
 We notice the same trend for V-cycles and F-cycles: while the average
