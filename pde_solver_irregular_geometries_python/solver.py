@@ -497,6 +497,20 @@ class Solver:
         else:
             plt.savefig(filename, bbox_inches='tight')
 
+    def dump_solution(self, filename):
+        """Writes solution to a file"""
+        with open(filename, 'w') as file:
+            file.write(f'grid {self.n} {self.n}\n')
+            for j in range(self.n):
+                for i in range(self.n):
+                    xi = self.x[i]
+                    yj = self.y[j]
+                    if self.b_in_shape[i][j]:
+                        file.write(f'{xi:.6e} {yj:.6e} NAN\n')
+                    else:
+                        u = self.un[i, j]
+                        file.write(f'{xi:.6e} {yj:.6e} {u:.6e}\n')
+
 
 def main():
     s = Solver(101, 0.000001, 0, 2*np.pi, 1)

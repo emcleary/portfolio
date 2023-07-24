@@ -77,7 +77,7 @@ public:
         fprintf(myfile, "grid %lu %lu\n", px, py);
         for (size_t j=0; j < py; j++)
             for (size_t i=0; i < px; i++) {
-                if (m_grid->is_on_shape(i, j) || m_grid->is_in_shape(i, j))
+                if (m_grid->is_in_shape(i, j))
                     fprintf(myfile, "%.6e %.6e NAN\n", m_grid->get_x(i), m_grid->get_y(j));
                 else
                     fprintf(myfile, "%.6e %.6e %.6e\n", m_grid->get_x(i), m_grid->get_y(j), soln[i][j]);
