@@ -72,5 +72,5 @@ need to be defined. See `examples/exmample_01_circle.cpp` for an
 example with a circle shape, and
 `examples/exmample_02_star_and_square.cpp` for examples of star and
 square shapes. Example 2 also demonstrates features of the builder
-design pattern, allowing users simple to set a new shape and rerun the
-solver.
+design pattern, allowing users a simple way to set a new shape and/or
+grid and then rerun the solver.
