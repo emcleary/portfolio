@@ -1,7 +1,7 @@
-# Elliptic PDE Solver with Irregular Geometry
+# Laplace Equation PDE Solver with Irregular Geometry
 
 This is an implementation of a finite difference scheme developed to
-solve elliptic PDEs on an irregular grid using a blocking out
+solve Laplace's equation on an irregular grid using a blocking out
 approach. This problem is adapted from Chapter 11 of the textbook
 "Numerical Partial Differential Equations: Conservation Laws and
 Elliptic Equations" by J. W. Thomas.
@@ -18,11 +18,11 @@ on a domain outide of a circle,
 
 ![](math/domain.png)
 
-with boundary conditions being
+with boundary conditions of
 
 ![](math/bc2.png)
 
-on the surface of the circle, and being 0 on the edges of the domain.
+on the surface of the circle and 0 on the edges of the domain.
 
 ## The Scheme
 
@@ -39,15 +39,13 @@ the x-axis and approaching the circle from the right. Other schemes
 need to be added for the other three directions.
 
 My implementation generalized this scheme to include all four
-directions in a single scheme, and I organized it in a way to make use
-of vectorized operations as much as possible. This was crucial for
-making running the scheme practical, as it can take 10,000-100,000
-iterations to converge.
+directions in a single scheme. I organized it in a way to make use
+of vectorized operations as much as possible to speed up performance.
 
 ## Results
 
 My code implements this in `solver.py`, which dumps the following image.
-![](solver.png)
+![](results/solver.png)
 
 
 ## Other Shapes
@@ -60,11 +58,9 @@ star. These cases are seen in their respective files, and they are
 very easy to implement, only requiring definitions of parametric
 functions, boundary conditions, and initial conditions.
 
-![](square.png)
+![](results/teardrop.png)
 
-![](teardrop.png)
-
-![](star.png)
+![](results/star.png)
 
 # Usage
 

@@ -1,4 +1,7 @@
 import numpy as np
+import sys
+sys.path.append('..')
+
 from solver import Solver
 
 class Complex(Solver):

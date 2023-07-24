@@ -85,6 +85,10 @@ int main() {
     Grid grid(xmin, xmax, nx, ymin, ymax, ny);
     solver.set_grid(&grid);
 
+    // Example of using the builder design patter with shapes.
+    // Simply set a new shape to the solver and run.
+    // This can similarly be done with different grid objects
+    // if the domain must change between runs.
     Star star;
     solver.set_shape(&star);
     solver.solve(50000);
