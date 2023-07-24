@@ -10,7 +10,7 @@ embarassingly parallelizable.
 # Features
 
 This tool has a few handy features:
-* It has a tool for running linear models from the commandline (see `tools/runCmdLine.py`).
+* It has a tool for experimenting with linear models from the commandline (see `tools/run_cmd_line.py`).
 * It has a template Model class that can be used for building additional, simple models for testing.
 * EKI can be run either with instances of a Model class or by streaming data (see `examples`).
 * The code includes extensive documentation and type hints.

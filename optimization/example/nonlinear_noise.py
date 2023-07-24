@@ -15,7 +15,7 @@ sys.path.append('../tools')
 import numpy as np
 from eki import EKI
 from models import Model
-from myTypes import NDArrayFloat64
+from my_types import NDArrayFloat64
 
 
 class Nonlinear(Model):

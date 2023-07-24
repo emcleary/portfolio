@@ -13,7 +13,7 @@ import numpy as np
 from eki import EKI
 from argparse import ArgumentParser, RawTextHelpFormatter, Namespace
 from models import Model
-from myTypes import *
+from my_types import *
 
 
 def get_cmd_line_arguments() -> Namespace:

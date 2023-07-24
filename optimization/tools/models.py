@@ -3,7 +3,7 @@ sys.path.append('../src')
 import numpy as np
 from argparse import ArgumentParser
 from typing import Optional, Generic
-from myTypes import *
+from my_types import *
 
 
 class Model(Generic[NDArrayFloat]):

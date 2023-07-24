@@ -1,6 +1,6 @@
 import numpy as np
 from typing import Optional, Generic
-from myTypes import *
+from my_types import *
 
 class EKI(Generic[NDArrayFloat]):
     """

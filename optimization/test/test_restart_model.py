@@ -15,10 +15,10 @@ from eki import EKI
 from models import Model
 
 
-def test_main():
+def test_main(random_seed=False):
 
     # Seed for RNG
-    if __name__ == '__main__':
+    if random_seed:
         seed = np.random.randint(1, 2**31-1)
         print('Seed set to', seed)
     else:
@@ -59,4 +59,4 @@ def test_main():
 
 
 if __name__=='__main__':
-    test_main()
+    test_main(True)
