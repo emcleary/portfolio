@@ -1,8 +1,0 @@
-#!/bin/bash
-
-shopt -s extglob
-for i in `echo *_test.py`; do
-    echo ""
-    echo $i
-    python $i | grep "as;dlfkj "
-done
