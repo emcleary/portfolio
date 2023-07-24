@@ -123,16 +123,16 @@ void Scheme::calc_scheme_param() {
 
     double dx = m_grid->get_dx();
     double dy = m_grid->get_dy();
-    double dt = m_dt;
+
     double cfl_dt = 0.002 / std::max(1./dx/dx, 1./dy/dy);
-    if (dt > cfl_dt) {
-        std::cout << "Shortening timestep from " << dt << " s to " << cfl_dt << " s to improve stability.\n";
-        std::cout << "May need to reduce timestep even further manually.\n";
-        dt = cfl_dt;
+    if (m_dt > cfl_dt) {
+        std::cout << "Timestep might be too large for a stable solution.\n";
+        std::cout << "Make sure to double check this and manually reduce the timestep if necessary.\n";
+        std::cout << cfl_dt << " is a reasonable estimate of a stable timestep.\n";
     }
 
-    double rx = dt / dx / dx;
-    double ry = dt / dy / dy;
+    double rx = m_dt / dx / dx;
+    double ry = m_dt / dy / dy;
 
     for (size_t i = 0; i < m_s0.shape()[0]; ++i) {
         for (size_t j = 0; j < m_s0.shape()[1]; ++j) {
