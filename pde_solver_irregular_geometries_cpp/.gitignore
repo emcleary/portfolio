@@ -1,2 +1,7 @@
+*.o
 *~
-\#*\#
+*.txt
+!CMakeLists.txt
+build
+html
+latex

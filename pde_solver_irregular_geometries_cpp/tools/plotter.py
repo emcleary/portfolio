@@ -26,9 +26,9 @@ def main():
             y.append(float(yi))
             u.append(float(ui))
 
-    x = np.asarray(x).reshape(nx, ny)
-    y = np.asarray(y).reshape(nx, ny)
-    u = np.asarray(u).reshape(nx, ny)
+    x = np.asarray(x).reshape(ny, nx)
+    y = np.asarray(y).reshape(ny, nx)
+    u = np.asarray(u).reshape(ny, nx)
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
