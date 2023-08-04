@@ -11,7 +11,7 @@ by defining a new child class defining the geometry.
 Demonstrated skills (C++ version):
 - class inheritance
 - builder design pattern
-- OpenMP for parallizing bottleneck calculations
+- OpenMP for parallelizing bottleneck calculations
 - external libraries Boost and GSL
 - CMake and Make for compiling
 - Doxygen for documentation
