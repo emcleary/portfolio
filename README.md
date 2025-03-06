@@ -3,12 +3,13 @@ studies and beyond.
 
 ## Unstructured Mesh Refinement (2025)
 
-This library generates 2D unstructured meshes using various Delaunay triangulation and refinement algorithms.
+The Unstructured Mesh Refinement (UMR) library generates 2D unstructured meshes using various Delaunay triangulation and refinement algorithms.
 
-Demonstrated skill:
-- abstract classes
-- design patterns: builder, factory, facade
-- command line interface
+Demonstrated skills:
+- abstract classes (see [sources](https://github.com/emcleary/umr/blob/main/src/sources_shape_interface.hpp), [refinement](https://github.com/emcleary/umr/blob/main/src/refinement_interface.hpp), [parametrics](https://github.com/emcleary/umr/blob/main/src/parametrics_interface.cpp))
+- design patterns: [builder](https://github.com/emcleary/umr/blob/main/src/builder.hpp), [factory](https://github.com/emcleary/umr/blob/main/src/quadedge.hpp), [facade](https://github.com/emcleary/umr/blob/main/src/optimizers.hpp)
+- data structures: [QuadEdge](https://github.com/emcleary/umr/blob/main/src/quadedge.hpp)
+- [command line interface](https://github.com/emcleary/umr/blob/main/src/command_line_interface.hpp)
 - external libraries: AlgLib, Boost, Jsoncpp, VTK
 - CMake for compiling
 - Doxygen for documentation
