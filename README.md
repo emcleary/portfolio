@@ -1,6 +1,18 @@
 This is a collection of miscellaneous coding projects from my graduate
-studies and since then. 
+studies and beyond.
 
+## Unstructured Mesh Refinement (2025)
+
+This library generates 2D unstructured meshes using various Delaunay triangulation and refinement algorithms.
+
+Demonstrated skill:
+- abstract classes
+- design patterns: builder, factory, facade
+- command line interface
+- external libraries: AlgLib, Boost, Jsoncpp, VTK
+- CMake for compiling
+- Doxygen for documentation
+- Delaunay triangulation
 
 ## PDE Solver with Irregular Geometries (2022, 2023)
 
