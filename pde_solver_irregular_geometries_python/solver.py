@@ -214,7 +214,7 @@ class Solver:
 
     def _set_bools_in_shape(self):
         """Determines which gridpoints are within the shape, filling the
-        b_in_shape attribute.
+        b_in_shape attribute. (Breath First Search)
         """
 
         queue = [(0, 0)]
