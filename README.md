@@ -3,7 +3,9 @@ studies and beyond.
 
 ## Unstructured Mesh Refinement (2025)
 
-The Unstructured Mesh Refinement (UMR) library generates 2D unstructured meshes using various Delaunay triangulation and refinement algorithms.
+The Unstructured Mesh Refinement (UMR) library generates 2D
+unstructured meshes using various Delaunay triangulation and
+refinement algorithms.
 
 Demonstrated skills:
 - abstract classes (see [sources](https://github.com/emcleary/umr/blob/main/src/sources_shape_interface.hpp), [refinement](https://github.com/emcleary/umr/blob/main/src/refinement_interface.hpp), [parametrics](https://github.com/emcleary/umr/blob/main/src/parametrics_interface.cpp))
@@ -14,6 +16,19 @@ Demonstrated skills:
 - CMake for compiling
 - Doxygen for documentation
 - Delaunay triangulation
+
+## Game Boy Emulator (2024)
+
+This is not a full release of my emulator, but rather an overview of
+my design process.  It includes many excerpts of my code written in
+C++, along with discussions of my implementation regarding the
+usefulness of specific design patterns and classes.
+
+Demonstrated skills:
+- design patterns: factory methods, facade, mediator, state machine
+- classes: inheritance, polymorphism
+- RAII / resource management
+- testing and performance
 
 ## PDE Solver with Irregular Geometries (2022, 2023)
 
