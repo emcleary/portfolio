@@ -1,4 +1,4 @@
-## Audio & Framerate
+## Audio & Frame Rate
 
 Audio is implemented using the SDL2 library. The SDL2 API is a bit
 complex, so the Audio class is implemented as a Facade design pattern
@@ -30,14 +30,14 @@ MBGA fails test #10, while ZBoy fails tests #2, #3 and gets stuck on
 ## Emulator Performance
 
 A good measure of performance of an emulator is measuring the
-framerate. At the very least, a Game Boy emulator should have a steady
-framerate of 60 fps.
+frame rate. At the very least, a Game Boy emulator should have a steady
+frame rate of 60 fps.
 
 Thanks to my implementation of the Audio class, its easy for me to
-adjust the framerate as needed for testing purposes. Below are some
+adjust the frame rate as needed for testing purposes. Below are some
 results from my testing with the game Rope And Bombs. My emulator gets
-a steady framerate up to 180 fps, 3 times the necessary 60 fps
-framerate. At 4 times the default speed it is a little slow at around
+a steady frame rate up to 180 fps, 3 times the necessary 60 fps
+frame rate. At 4 times the default speed it is a little slow at around
 230 fps.
 
 Default Speed | Double Speed
