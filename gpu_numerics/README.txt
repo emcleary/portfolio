@@ -1,3 +1,11 @@
+This is a report from my Final Exam project in a GPU Computing course at Caltech.
+My work showed that GPUs have promise for Jacobi iteration and multigrid solvers,
+but they are tricky to implement. Optimized performance would require going back
+and forth between GPU and CPU solvers in V-cycles, which was beyond the scope
+of this project.
+
+
+
 CPU/GPU Demo: Multigrid Solvers
 
 Emmet M. Cleary
