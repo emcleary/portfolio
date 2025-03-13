@@ -1,4 +1,4 @@
-CPU Demo: Multigrid Solvers
+CPU/GPU Demo: Multigrid Solvers
 
 Emmet M. Cleary
 
