@@ -37,8 +37,7 @@ Thanks to my implementation of the Audio class, its easy for me to
 adjust the frame rate as needed for testing purposes. Below are some
 results from my testing with the game Rope And Bombs. My emulator gets
 a steady frame rate up to 180 fps, 3 times the necessary 60 fps
-frame rate. At 4 times the default speed it is a little slow at around
-230 fps.
+frame rate. At 4 times the default speed it is a little slow, reaching only 230 fps.
 
 Default Speed | Double Speed
 :------------:|:-----------:
