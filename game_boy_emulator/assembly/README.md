@@ -69,7 +69,7 @@ approach. See [PPU](../ppu) for an example of this.
 My first tests with the emulator were simple assembly scripts to test
 some tricky instructions. I implemeted instruction and register
 printouts (as shown below) for validation purposes. An example
-included here is for the [sum](sub.asm) instruction, designed
+included here is for the [sub](sub.asm) instruction, designed
 specifically to confirm that flags get set properly when doing
 subtraction operations. Flag Z is set if the result is 0, while H and
 C are set for specific cases of carrying.
