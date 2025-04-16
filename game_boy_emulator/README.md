@@ -3,7 +3,7 @@
 This is not a full release of my emulator. I have no plans to release
 it. I'm still quite proud of this project, as it was very challenging
 and outside my background in scientific computing. Here I'm sharing
-excepts of my code, with discussions in README files about my design
+excerpts of my code, with discussions in README files about my design
 decisions, along with testing and performance where applicable.
 
 Here is a quick summary of useful design patterns and valuable
