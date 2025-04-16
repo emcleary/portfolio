@@ -5,7 +5,7 @@ instructions. Their purpose is to get, set, manipulate, and/or move
 bytes of data between memory and the registers.
 
 Efficiently writing the code for so many instructions required both a
-mix of dyanamic and static polymorphism, as described below.
+mix of dynamic and static polymorphism, as described below.
 
 ## Dynamic Polymorphism
 
