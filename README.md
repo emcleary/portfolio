@@ -1,6 +1,24 @@
 This is a collection of miscellaneous coding projects from my graduate
 studies and beyond.
 
+If cloning, I recommend cloning recursively to include all submodules:
+```
+git clone --recurse-submodules https://github.com/emcleary/portfolio.git
+```
+
+
+## GPU Multigrid Framework (2025)
+
+This is a framework I wrote for a geometric multigrid solver
+parallelized with CUDA.
+
+Demonstrated skills:
+- C++
+- CUDA for GPGPU
+- partial differential equations
+- iterative solvers
+- multigrid methods
+
 ## Unstructured Mesh Refinement (2025)
 
 The Unstructured Mesh Refinement (UMR) library generates 2D
@@ -86,16 +104,3 @@ Demonstrated skills:
 - finite difference schemes
 - partial differential equations
 - fluid mechanics and combustion problems
-
-## GPU Numerics (2017)
-
-This was a final project I wrote for a GPU programming course. The
-project solves an ODE using Jacobi iteration and multigrid solvers on
-both CPU and GPU using CUDA.
-
-Demonstrated skills:
-- C
-- CUDA for GPGPU
-- partial differential equations
-- iterative solvers
-- multigrid methods

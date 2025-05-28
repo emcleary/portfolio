@@ -1,3 +1,6 @@
 [submodule "umr"]
 	path = umr
 	url = https://github.com/emcleary/umr
+[submodule "gpu-multigrid-framework"]
+	path = gpu-multigrid-framework
+	url = https://github.com/emcleary/gpu-multigrid-framework
