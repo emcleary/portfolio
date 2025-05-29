@@ -18,6 +18,7 @@ Demonstrated skills:
 - partial differential equations
 - iterative solvers
 - multigrid methods
+- modular code design
 
 ## Unstructured Mesh Refinement (2025)
 
