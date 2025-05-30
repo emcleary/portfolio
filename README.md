@@ -49,7 +49,7 @@ Demonstrated skills:
 - RAII / resource management
 - testing and performance
 
-## PDE Solver with Irregular Geometries (2022, 2023)
+## PDE Solver with Irregular Geometries (2023)
 
 This implements a finite difference scheme to solve a PDE on an
 irregular geometry. The code can work with different geometries simply
@@ -73,12 +73,11 @@ Demonstrated skills (Python version):
 - partial differential equations
 - finite difference schemes
 
-## Optimization (2020, 2022)
+## Optimization (2020)
 
 This is an example test script from my research project implementing
 the Ensemble Kalman Inversion algorithm for optimizing model
-parameters given noisy data. It was updated in 2022 to include
-docstrings and type hinting for documentation purposes.
+parameters given noisy data.
 
 Demonstrated skills:
 - class inheritance
