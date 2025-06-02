@@ -22,7 +22,7 @@ I performed audio testing using a test rom built by
 [Blarg](https://github.com/retrio/gb-test-roms). While not perfect,
 the audio during gameplay sounds fine to me. Some other emulators to
 pass these tests perfectly (bingb, SameBoy), but not all do.  For example,
-MBGA fails test #10, while ZBoy fails tests #2, #3 and gets stuck on
+MGBA fails test #10, while ZBoy fails tests #2, #3 and gets stuck on
 #4, and they both still produce great sounding audio!
 
 <img src="../images/blargg_dmg_sound.png" height="240">
