@@ -11,7 +11,7 @@ going to dwell on those.)
 ## Battery
 
 The battery is a save file that, during gameplay, can get written to
-repeatedly. My implementation of [battert](battery.hpp) follows the
+repeatedly. My implementation of [battery](battery.hpp) follows the
 RAII paradigm. It opens the save file in a constructor so it is ready
 to go for writing. When a battery object gets destroyed, the file
 closes automatically.  Given how frequently data can be written during
