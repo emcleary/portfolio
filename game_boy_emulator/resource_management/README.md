@@ -30,7 +30,7 @@ as references to ensure there is no confusion about ownership.
 
 ## Global Variables
 
-The emulator include 3 processing units and various other objects that
+The emulator includes 3 processing units and various other objects that
 interact. I decided to make them all global, by constructing them in a
 namespace (see [global.cpp](global.cpp)). Then in
 [main.cpp](main.cpp), after they are all guaranteed to be constructed,
