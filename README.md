@@ -7,7 +7,7 @@ git clone --recurse-submodules https://github.com/emcleary/portfolio.git
 ```
 
 
-## GPU Multigrid Framework (2025)
+## Parallel Multigrid Framework (2025)
 
 This is a framework I wrote for a geometric multigrid solver
 parallelized with CUDA.
@@ -15,6 +15,7 @@ parallelized with CUDA.
 Demonstrated skills:
 - C++
 - CUDA for GPGPU
+- OpenMP for parallelizing CPU
 - partial differential equations
 - iterative solvers
 - multigrid methods
