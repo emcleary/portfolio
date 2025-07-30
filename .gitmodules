@@ -4,3 +4,6 @@
 [submodule "parallel-multigrid-framework"]
 	path = parallel-multigrid-framework
 	url = https://github.com/emcleary/parallel-multigrid-framework
+[submodule "structured-mesh-generators"]
+	path = structured-mesh-generators
+	url = git@github.com:emcleary/structured-mesh-generators.git

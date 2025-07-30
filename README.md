@@ -37,6 +37,17 @@ Demonstrated skills:
 - Doxygen for documentation
 - Delaunay triangulation
 
+## Structured Mesh Generators (2024)
+
+The Structured Mesh Generators library generates 2D structured meshes
+using algebraic mesh generators and solving the Beltrami/diffusion
+equations.
+
+Demonstrated skills:
+- class inheritance
+- partial differential equations
+- finite difference schemes
+
 ## Game Boy Emulator (2024)
 
 This is not a full release of my emulator, but rather an overview of
